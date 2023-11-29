@@ -1,8 +1,8 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget android-versionCode="44000" id="com.moodle.moodlemobile" ios-CFBundleVersion="4.4.0.0" version="4.4.0" versionCode="44000" xmlns="http://www.w3.org/ns/widgets" xmlns:android="http://schemas.android.com/apk/res/android" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-    <name>Moodle</name>
-    <description>Moodle official app</description>
-    <author email="mobile@moodle.com" href="http://moodle.com">Moodle Mobile team</author>
+<widget android-versionCode="10000" id="ao.kassai.mobile" ios-CFBundleVersion="1.0.0.0" version="1.0.0" versionCode="10000" xmlns="http://www.w3.org/ns/widgets" xmlns:android="http://schemas.android.com/apk/res/android" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>Kassai</name>
+    <description>Kassai official app</description>
+    <author email="info@kassai.ao" href="https://www.kassai.ao">Kassai</author>
     <content src="index.html" />
     <access origin="*" />
     <access launch-external="yes" origin="tel:*" />
@@ -28,7 +28,7 @@
     <preference name="UIWebViewBounce" value="false" />
     <preference name="DisallowOverscroll" value="true" />
     <preference name="prerendered-icon" value="true" />
-    <preference name="AppendUserAgent" value="MoodleMobile 4.4.0 (44000)" />
+    <preference name="AppendUserAgent" value="KassaiMobile 1.0.0 (10000)" />
     <preference name="BackupWebStorage" value="none" />
     <preference name="ScrollEnabled" value="false" />
     <preference name="KeyboardDisplayRequiresUserAction" value="false" />
@@ -208,19 +208,22 @@
             <string>We need your location so you can attach it as part of your submissions.</string>
         </edit-config>
         <edit-config file="*-Info.plist" mode="merge" target="NSCameraUsageDescription">
-            <string>We need camera access to take pictures so you can attach them as part of your submissions.</string>
+            <string>We need camera access to take pictures so you can attach them as part of your
+                submissions.</string>
         </edit-config>
         <edit-config file="*-Info.plist" mode="merge" target="NSMicrophoneUsageDescription">
-            <string>We need microphone access to record sounds so you can attach them as part of your submissions.</string>
+            <string>We need microphone access to record sounds so you can attach them as part of
+                your submissions.</string>
         </edit-config>
         <edit-config file="*-Info.plist" mode="merge" target="NSPhotoLibraryUsageDescription">
-            <string>We need photo library access to get pictures from there so you can attach them as part of your submissions.</string>
+            <string>We need photo library access to get pictures from there so you can attach them
+                as part of your submissions.</string>
         </edit-config>
         <edit-config file="*-Info.plist" mode="merge" target="UISupportsDocumentBrowser">
             <true />
         </edit-config>
         <edit-config file="*-Info.plist" mode="merge" target="CFBundleShortVersionString">
-            <string>4.4.0</string>
+            <string>1.0.0</string>
         </edit-config>
         <edit-config file="*-Info.plist" mode="overwrite" target="CFBundleLocalizations">
             <array>
@@ -250,7 +253,8 @@
             <false />
         </config-file>
         <config-file parent="NSCrossWebsiteTrackingUsageDescription" target="*-Info.plist">
-            <string>This app needs third party cookies to correctly render embedded content from the Moodle site.</string>
+            <string>This app needs third party cookies to correctly render embedded content from the
+                Moodle site.</string>
         </config-file>
         <config-file parent="ITSAppUsesNonExemptEncryption" target="*-Info.plist">
             <false />
