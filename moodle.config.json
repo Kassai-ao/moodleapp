@@ -1,7 +1,7 @@
 {
     "app_id": "ao.kassai.mobile",
     "appname": "Kassai",
-    "versioncode": 10000,
+    "versioncode": 10001,
     "versionname": "1.0.0",
     "cache_update_frequency_usually": 420000,
     "cache_update_frequency_often": 1200000,
@@ -48,5 +48,6 @@
         "long": 3500,
         "sticky": 0
     },
-    "disableTokenFile": false
+    "disableTokenFile": false,
+    "hideInformativeLinks": true
 }
