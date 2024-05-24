@@ -135,6 +135,7 @@ export class CoreCourseFormatComponent implements OnInit, OnChanges, OnDestroy {
      * @inheritdoc
      */
     ngOnInit(): void {
+        // debugger;
         if (this.course === undefined) {
             CoreDomUtils.showErrorModal('Course not set');
 

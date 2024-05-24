@@ -1,8 +1,8 @@
 {
     "app_id": "ao.kassai.mobile",
     "appname": "Kassai",
-    "versioncode": 10002,
-    "versionname": "1.0.0",
+    "versioncode": 44000,
+    "versionname": "4.4.0",
     "cache_update_frequency_usually": 420000,
     "cache_update_frequency_often": 1200000,
     "cache_update_frequency_sometimes": 3600000,
@@ -10,10 +10,7 @@
     "default_lang": "en",
     "languages": {
         "en": "English",
-        "en-us": "English (United States)",
-        "fr": "Français",
-        "pt": "Português - Portugal",
-        "pt-br": "Português - Brasil",
+        "pt-br": "Português - Brasil"
     },
     "wsservice": "moodle_mobile_app",
     "defaultZoomLevel": "none",
@@ -24,10 +21,10 @@
     },
     "customurlscheme": "moodlemobile",
     "sites": [
-      {
-        "name": "Kassai",
-        "url": "https://qas002.kassai.ao"
-      }
+        {
+            "name": "Kassai",
+            "url": "https://qas002.kassai.ao"
+        }
     ],
     "multisitesdisplay": "",
     "sitefindersettings": {},

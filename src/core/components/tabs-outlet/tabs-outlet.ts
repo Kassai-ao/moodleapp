@@ -91,6 +91,7 @@ export class CoreTabsOutletComponent extends CoreTabsBaseComponent<CoreTabsOutle
         }
 
         this.stackEventsSubscription = this.ionTabs.outlet.stackEvents.subscribe(async (stackEvent: StackEvent) => {
+            // debugger;
             if (!this.isCurrentView) {
                 return;
             }

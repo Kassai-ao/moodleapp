@@ -54,6 +54,7 @@ export class CoreModIconComponent implements OnInit, OnChanges {
      * @inheritdoc
      */
     async ngOnInit(): Promise<void> {
+        // debugger;
         if (!this.modname && this.modicon) {
             // Guess module from the icon url.
             this.modname = this.getComponentNameFromIconUrl(this.modicon);

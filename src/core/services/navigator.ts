@@ -533,6 +533,7 @@ export class CoreNavigatorService {
      * @returns Whether navigation suceeded.
      */
     protected async navigateToMainMenuPath(path: string, options: CoreNavigationOptions = {}): Promise<boolean> {
+        // debugger;
         options = {
             preferCurrentTab: true,
             ...options,

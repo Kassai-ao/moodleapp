@@ -19,6 +19,7 @@ import {
     CoreSitePluginsPlugin,
 } from '@features/siteplugins/services/siteplugins';
 import { CoreSitePluginsBaseHandler } from './base-handler';
+import { CoreUtils } from '@services/utils/utils';
 
 /**
  * Handler to display a site plugin in the main menu.
@@ -43,6 +44,11 @@ export class CoreSitePluginsMainMenuHandler extends CoreSitePluginsBaseHandler i
      * @inheritdoc
      */
     getDisplayData(): CoreMainMenuHandlerData {
+        // debugger;
+        const onlyInMore = typeof this.handlerSchema.onlyInMore === 'undefined' || this.handlerSchema.onlyInMore === null
+            ? true
+            : this.handlerSchema.onlyInMore;
+
         return {
             title: this.title,
             icon: this.handlerSchema.displaydata?.icon || 'fas-question',
@@ -52,8 +58,9 @@ export class CoreSitePluginsMainMenuHandler extends CoreSitePluginsBaseHandler i
                 title: this.title,
                 initResult: this.initResult,
                 ptrEnabled: this.handlerSchema.ptrenabled,
+                showBackButton: !CoreUtils.isFalseOrZero(onlyInMore),
             },
-            onlyInMore: true,
+            onlyInMore,
         };
     }
 

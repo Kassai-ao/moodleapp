@@ -94,6 +94,7 @@ export class CoreCourseListModTypePage implements OnInit {
         }
 
         try {
+            // debugger;
             // Get all the modules in the course.
             let sections = await CoreCourse.getSections(this.courseId, false, true);
 

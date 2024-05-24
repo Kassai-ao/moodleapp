@@ -49,6 +49,7 @@ export class CoreMainMenuMorePage implements OnInit, OnDestroy {
     protected resizeListener?: CoreEventObserver;
 
     constructor() {
+        // debugger;
         this.langObserver = CoreEvents.on(CoreEvents.LANGUAGE_CHANGED, () => this.loadCustomMenuItems());
 
         this.updateSiteObserver = CoreEvents.on(CoreEvents.SITE_UPDATED, async () => {

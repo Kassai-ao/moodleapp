@@ -860,6 +860,7 @@ export type CoreSitePluginsMainMenuHandlerData = CoreSitePluginsHandlerCommonDat
     };
     priority?: number;
     ptrenabled?: boolean;
+    onlyInMore?: boolean;
 };
 
 /**

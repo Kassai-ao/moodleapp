@@ -29,6 +29,7 @@ export class CoreAriaRoleTab<T = unknown> {
      * @param e Event.
      */
     keyDown(tabFindIndex: string, e: KeyboardEvent): void {
+        // debugger;
         if (e.key === ' ' ||
             e.key === 'Enter' ||
             e.key === 'Home' ||
@@ -60,6 +61,7 @@ export class CoreAriaRoleTab<T = unknown> {
      * @param e Event.
      */
     keyUp(tabFindIndex: string, e: KeyboardEvent): void {
+        // debugger;
         e.preventDefault();
         e.stopPropagation();
         e.stopImmediatePropagation();

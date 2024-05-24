@@ -4,6 +4,16 @@
  * Place here custom styles.
  */
 
+ .is-pre-avalicao core-mod-icon {
+    background-color: var(--activitypreavaliacao) !important;
+}
+.is-pos-avalicao core-mod-icon {
+    background-color: var(--activityposavaliacao) !important;
+}
+.is-videoaula core-mod-icon {
+    background-color: var(--activityvideoaula) !important;
+}
+
 /*
  * Light Theme
  * -------------------------------------------

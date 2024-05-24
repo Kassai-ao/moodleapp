@@ -288,6 +288,7 @@ export class CoreTabsBaseComponent<T extends CoreTabBase> implements OnInit, Aft
      * Initialize the tabs, determining the first tab to be shown.
      */
     protected async initializeTabs(): Promise<void> {
+        // debugger;
         if (!this.initialized || !this.slidesElement) {
             return;
         }
@@ -482,6 +483,7 @@ export class CoreTabsBaseComponent<T extends CoreTabBase> implements OnInit, Aft
      * @returns Promise resolved when done.
      */
     async selectTab(tabId: string, e?: Event): Promise<void> {
+        // debugger;
         const index = this.tabs.findIndex((tab) => tabId == tab.id);
         if (index < 0) {
             return;
@@ -593,6 +595,7 @@ class CoreTabsRoleTab<T extends CoreTabBase> extends CoreAriaRoleTab<CoreTabsBas
      * @inheritdoc
      */
     selectTab(tabId: string, e: Event): void {
+        // debugger;
         this.componentInstance.selectTab(tabId, e);
     }
 
@@ -600,6 +603,8 @@ class CoreTabsRoleTab<T extends CoreTabBase> extends CoreAriaRoleTab<CoreTabsBas
      * @inheritdoc
      */
     getSelectableTabs(): CoreAriaRoleTabFindable[] {
+        // debugger;
+
         return this.componentInstance.tabs.filter((tab) => tab.enabled).map((tab) => ({
             id: tab.id || '',
             findIndex: tab.id || '',

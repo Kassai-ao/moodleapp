@@ -30,6 +30,7 @@ import { CoreMainMenuHomePage } from '@features/mainmenu/pages/home/home';
  * @returns Routes.
  */
 function buildRoutes(injector: Injector): Routes {
+    // debugger;
     const routes = resolveHomeRoutes(injector);
 
     return [
