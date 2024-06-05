@@ -82,12 +82,17 @@ export interface CoreMainMenuHandlerData {
      * Priority of the handler. If set, overrides the priority defined in CoreMainMenuHandler.
      */
     priority?: number;
+
+    sitePluginPage?: string; // Site plugin page to load.
 }
 
 /**
  * Data returned by the delegate for each handler.
  */
 export interface CoreMainMenuHandlerToDisplay extends CoreDelegateToDisplay, CoreMainMenuHandlerData {
+
+    isPluginLoaded?: boolean; // Whether the plugin is loaded or not.
+
     /**
      * Hide tab. Used then resizing.
      */

@@ -19,7 +19,7 @@
   ],
   "scripts": {
     "ng": "ng",
-    "start": "ionic serve --browser=$MOODLE_APP_BROWSER --ssl",
+    "start": "ionic serve --browser=/Applications/Chromium.app --ssl",
     "serve:test": "NODE_ENV=testing ionic serve --no-open",
     "build": "NODE_OPTIONS=--max-old-space-size=8192 ionic build --configuration=development",
     "build:prod": "NODE_ENV=production ionic build --prod",
@@ -96,7 +96,7 @@
     "cordova": "^12.0.0",
     "cordova-android": "^12.0.1",
     "cordova-clipboard": "^1.3.0",
-    "cordova-ios": "^7.1.0",
+    "cordova-ios": "7.1.0",
     "cordova-plugin-add-swift-support": "^2.0.2",
     "cordova-plugin-androidx-adapter": "^1.1.3",
     "cordova-plugin-badge": "^0.8.9",

@@ -1,0 +1,8 @@
+go to
+- /platforms/ios/cordova/build-debug.xcconfig
+- /platforms/ios/cordova/build-release.xcconfig
+
+and add this to the end
+
+
+SWIFT_OBJC_INTERFACE_HEADER_NAME = Moodle-Swift.h

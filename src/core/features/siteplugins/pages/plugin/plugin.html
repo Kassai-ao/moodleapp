@@ -1,6 +1,6 @@
 <ion-header>
     <ion-toolbar>
-        <ion-buttons slot="start">
+        <ion-buttons slot="start" *ngIf="showBackButton">
             <ion-back-button [text]="'core.back' | translate" />
         </ion-buttons>
         <ion-title>

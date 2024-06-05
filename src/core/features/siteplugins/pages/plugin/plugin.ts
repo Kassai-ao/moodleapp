@@ -40,6 +40,7 @@ export class CoreSitePluginsPluginPage implements OnInit, CanLeave {
     jsData?: Record<string, unknown>; // JS variables to pass to the plugin so they can be used in the template or JS.
     preSets?: CoreSiteWSPreSets; // The preSets for the WS call.
     ptrEnabled = false;
+    showBackButton = true;
 
     /**
      * @inheritdoc
@@ -53,6 +54,9 @@ export class CoreSitePluginsPluginPage implements OnInit, CanLeave {
         this.jsData = CoreNavigator.getRouteParam('jsData');
         this.preSets = CoreNavigator.getRouteParam('preSets');
         this.ptrEnabled = !CoreUtils.isFalseOrZero(CoreNavigator.getRouteBooleanParam('ptrEnabled'));
+        this.showBackButton = CoreNavigator.getRouteBooleanParam('showBackButton') === undefined
+            ? true
+            : !CoreUtils.isFalseOrZero(CoreNavigator.getRouteBooleanParam('showBackButton'));
     }
 
     /**

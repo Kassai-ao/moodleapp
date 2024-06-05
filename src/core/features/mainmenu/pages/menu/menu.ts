@@ -19,7 +19,7 @@ import { Subscription } from 'rxjs';
 
 import { CoreEvents, CoreEventObserver } from '@singletons/events';
 import { CoreMainMenu, CoreMainMenuProvider } from '../../services/mainmenu';
-import { CoreMainMenuDelegate, CoreMainMenuHandlerToDisplay } from '../../services/mainmenu-delegate';
+import { CoreMainMenuDelegate, CoreMainMenuHandlerData, CoreMainMenuHandlerToDisplay } from '../../services/mainmenu-delegate';
 import { Router } from '@singletons';
 import { CoreUtils } from '@services/utils/utils';
 import { CoreAriaRoleTab, CoreAriaRoleTabFindable } from '@classes/aria-role-tab';
@@ -118,10 +118,8 @@ export class CoreMainMenuPage implements OnInit, OnDestroy {
         this.updateVisibility();
 
         this.subscription = CoreMainMenuDelegate.getHandlersObservable().subscribe((handlers) => {
-            const previousHandlers = this.allHandlers;
             this.allHandlers = handlers;
-
-            this.updateHandlers(previousHandlers);
+            this.updateHandlers(handlers);
         });
 
         this.badgeUpdateObserver = CoreEvents.on(CoreMainMenuProvider.MAIN_MENU_HANDLER_BADGE_UPDATED, (data) => {
@@ -165,7 +163,7 @@ export class CoreMainMenuPage implements OnInit, OnDestroy {
         this.updateVisibility();
 
         const handlers = this.allHandlers
-            .filter((handler) => !handler.onlyInMore)
+            .filter((handler) => !handler.onlyInMore && handler.title !== 'core.courses.mycourses')
             .slice(0, CoreMainMenu.getNumItems()); // Get main handlers.
 
         // Re-build the list of tabs. If a handler is already in the list, use existing object to prevent re-creating the tab.
@@ -180,6 +178,11 @@ export class CoreMainMenuPage implements OnInit, OnDestroy {
             tab ? tab.hide = false : null;
             handler.hide = false;
             handler.id = handler.id || 'core-mainmenu-' + CoreUtils.getUniqueId('CoreMainMenuPage');
+            handler.isPluginLoaded = handler.page.startsWith('siteplugins/');
+            if (handler.isPluginLoaded) {
+                handler.sitePluginPage = handler.page;
+                handler.page = handler.page.replace(/\//g,'-');
+            }
 
             newTabs.push(tab || handler);
         }
@@ -335,6 +338,13 @@ export class CoreMainMenuPage implements OnInit, OnDestroy {
         await CoreUtils.nextTick();
 
         CoreEvents.trigger(CoreMainMenuProvider.MAIN_MENU_VISIBILITY_UPDATED);
+    }
+
+    openHandler(handler: CoreMainMenuHandlerData): void {
+        // debugger;
+        const params = handler.pageParams;
+
+        CoreNavigator.navigateToSitePath(handler.sitePluginPage!, { params });
     }
 
 }

@@ -103,7 +103,10 @@
             <core-course-module *ngIf="module.visibleoncoursepage !== 0" [module]="module" [section]="section"
                 [showActivityDates]="course.showactivitydates" [showCompletionConditions]="course.showcompletionconditions"
                 [isLastViewed]="lastModuleViewed && lastModuleViewed.cmId === module.id" [class.core-course-module-not-viewed]="
-                    !viewedModules[module.id] && (!module.completiondata || module.completiondata.state === completionStatusIncomplete)" />
+                    !viewedModules[module.id] && (!module.completiondata || module.completiondata.state === completionStatusIncomplete)"
+                [class.is-pre-avalicao]="module.name.indexOf('Pré-avaliação') !== -1"
+                [class.is-pos-avalicao]="module.name.indexOf('Pós-avaliação') !== -1"
+                [class.is-videoaula]="module.name.indexOf('Videoaula') !== -1" />
         </ng-container>
     </section>
 </ng-template>
