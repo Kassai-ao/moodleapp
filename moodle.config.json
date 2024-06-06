@@ -60,5 +60,6 @@
     "appstores": {
         "android": "ao.kassai.mobile",
         "ios": "id6502700067"
-    }
+    },
+    "forceOpenLinksIn": "app"
 }
